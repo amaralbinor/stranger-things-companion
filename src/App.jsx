@@ -6,7 +6,7 @@ import Landing from "./pages/Landing";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Characters from "./pages/Characters";
-import Series from "./pages/Series";
+import Episodes from "./pages/Episodes";
 
 function App() {
   return (
@@ -18,7 +18,7 @@ function App() {
         <Route path="/home" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/characters" element={<Characters />} />
-        <Route path="/Series" element={<Series />} />
+        <Route path="/Episodes" element={<Episodes />} />
 
       </Routes>
     </>
