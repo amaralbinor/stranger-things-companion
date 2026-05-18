@@ -7,6 +7,7 @@ import StrangerPoster from "../assets/StrangerPoster.jpg";
 import HellfireMug from "../assets/HellfireMug.jpg";
 
 function Products() {
+  const [search, setSearch] = useState("");
 
   const [products] = useState([
     {
@@ -17,7 +18,6 @@ function Products() {
       price: 25,
       image: StrangerShirt,
     },
-
     {
       id: 2,
       name: "Figura Demogorgon",
@@ -26,7 +26,6 @@ function Products() {
       price: 40,
       image: DemogorgonFigure,
     },
-
     {
       id: 3,
       name: "Póster Stranger Things",
@@ -35,7 +34,6 @@ function Products() {
       price: 20,
       image: StrangerPoster,
     },
-
     {
       id: 4,
       name: "Taza Hellfire Club",
@@ -46,24 +44,29 @@ function Products() {
     },
   ]);
 
+  const filteredProducts = products.filter((product) =>
+    product.name.toLowerCase().includes(search.toLowerCase())
+  );
+
   return (
     <main className="products-container">
-
       <h1>Productos</h1>
 
       <p className="products-intro">
         Explora productos inspirados en el universo de Stranger Things.
       </p>
 
+      <input
+        type="text"
+        placeholder="Buscar productos..."
+        value={search}
+        onChange={(e) => setSearch(e.target.value)}
+        className="search-input"
+      />
+
       <section className="products-grid">
-
-        {products.map((product) => (
-
-          <article
-            className="product-card"
-            key={product.id}
-          >
-
+        {filteredProducts.map((product) => (
+          <article className="product-card" key={product.id}>
             <img
               src={product.image}
               alt={product.name}
@@ -71,21 +74,13 @@ function Products() {
             />
 
             <div className="product-info">
-
               <h2>{product.name}</h2>
-
               <p>{product.description}</p>
-
               <span>${product.price}</span>
-
             </div>
-
           </article>
-
         ))}
-
       </section>
-
     </main>
   );
 }
