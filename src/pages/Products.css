@@ -68,3 +68,26 @@
   font-weight: bold;
   font-size: 20px;
 }
+
+.search-input {
+  width: 100%;
+  max-width: 420px;
+  padding: 14px 18px;
+  margin: 0 auto 35px auto;
+  display: block;
+  border-radius: 12px;
+  border: 1px solid rgba(229, 9, 20, 0.4);
+  background: #181820;
+  color: white;
+  font-size: 16px;
+  outline: none;
+}
+
+.search-input::placeholder {
+  color: #9f9f9f;
+}
+
+.search-input:focus {
+  border-color: #e50914;
+  box-shadow: 0 0 14px rgba(229, 9, 20, 0.35);
+}
