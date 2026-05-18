@@ -11,36 +11,36 @@ function Products() {
   const [products] = useState([
     {
       id: 1,
-      name: "Stranger Things T-Shirt",
+      name: "Camiseta Stranger Things",
       description:
-        "Special edition t-shirt inspired by the Stranger Things universe.",
+        "Camiseta edición especial inspirada en el universo de Stranger Things.",
       price: 25,
       image: StrangerShirt,
     },
 
     {
       id: 2,
-      name: "Demogorgon Figure",
+      name: "Figura Demogorgon",
       description:
-        "Collectible figure inspired by the Demogorgon from the Upside Down.",
+        "Figura coleccionable inspirada en el Demogorgon del Mundo del Revés.",
       price: 40,
       image: DemogorgonFigure,
     },
 
     {
       id: 3,
-      name: "Stranger Things Poster",
+      name: "Póster Stranger Things",
       description:
-        "Collector poster inspired by Hawkins and the Upside Down.",
+        "Póster coleccionable inspirado en Hawkins y el Mundo del Revés.",
       price: 20,
       image: StrangerPoster,
     },
 
     {
       id: 4,
-      name: "Hellfire Club Mug",
+      name: "Taza Hellfire Club",
       description:
-        "Themed mug inspired by the legendary Hellfire Club.",
+        "Taza temática inspirada en el legendario Hellfire Club.",
       price: 15,
       image: HellfireMug,
     },
@@ -49,10 +49,10 @@ function Products() {
   return (
     <main className="products-container">
 
-      <h1>Products</h1>
+      <h1>Productos</h1>
 
       <p className="products-intro">
-        Explore products inspired by the Stranger Things universe.
+        Explora productos inspirados en el universo de Stranger Things.
       </p>
 
       <section className="products-grid">
