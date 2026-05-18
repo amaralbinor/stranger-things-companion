@@ -7,6 +7,7 @@ import StrangerPoster from "../assets/StrangerPoster.jpg";
 import HellfireMug from "../assets/HellfireMug.jpg";
 
 function Products() {
+
   const [search, setSearch] = useState("");
 
   const [products] = useState([
@@ -18,6 +19,7 @@ function Products() {
       price: 25,
       image: StrangerShirt,
     },
+
     {
       id: 2,
       name: "Figura Demogorgon",
@@ -26,6 +28,7 @@ function Products() {
       price: 40,
       image: DemogorgonFigure,
     },
+
     {
       id: 3,
       name: "Póster Stranger Things",
@@ -34,6 +37,7 @@ function Products() {
       price: 20,
       image: StrangerPoster,
     },
+
     {
       id: 4,
       name: "Taza Hellfire Club",
@@ -50,6 +54,7 @@ function Products() {
 
   return (
     <main className="products-container">
+
       <h1>Productos</h1>
 
       <p className="products-intro">
@@ -65,22 +70,46 @@ function Products() {
       />
 
       <section className="products-grid">
-        {filteredProducts.map((product) => (
-          <article className="product-card" key={product.id}>
-            <img
-              src={product.image}
-              alt={product.name}
-              className="product-image"
-            />
 
-            <div className="product-info">
-              <h2>{product.name}</h2>
-              <p>{product.description}</p>
-              <span>${product.price}</span>
-            </div>
-          </article>
-        ))}
+        {filteredProducts.length === 0 ? (
+
+          <p className="no-results">
+            No se encontraron productos.
+          </p>
+
+        ) : (
+
+          filteredProducts.map((product) => (
+
+            <article
+              className="product-card"
+              key={product.id}
+            >
+
+              <img
+                src={product.image}
+                alt={product.name}
+                className="product-image"
+              />
+
+              <div className="product-info">
+
+                <h2>{product.name}</h2>
+
+                <p>{product.description}</p>
+
+                <span>${product.price}</span>
+
+              </div>
+
+            </article>
+
+          ))
+
+        )}
+
       </section>
+
     </main>
   );
 }
